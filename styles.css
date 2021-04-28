@@ -18,10 +18,7 @@ table{
     border: black;
     border-radius: 1px;
 }
-div+
-
-
-
+div
 {
     border-radius: 1px;
     width: 100%;
@@ -43,12 +40,8 @@ td{
 
 td.income{
     border-right: 0.1em solid rgba(0, 0, 0, 0.199);
-
 }
-td.HO{
-    border-right: 0.1em solid rgba(0, 0, 0, 0.199);
 
-}
 .HO{
     color: green;
     text-align: center;
