@@ -10,12 +10,15 @@ h1 {
 
 }
 h2{
+    border-bottom: 2px solid red;
 
 }
 input{
     width: 100%;
-
 }
+input[type=text]:focus {
+    border-color: rgb(230, 203, 173);
+  }
 table{
     border-radius: 1px;
     width: 100%;
@@ -60,3 +63,9 @@ td.income{
     text-align: center;
 
 } 
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+  }
