@@ -13,23 +13,26 @@
 <tr>
     <td align="center" class="income" >
         <strong  class="expense-title">Income  </strong>
-        <span class="HO"><p></p>0.00$</span>
+        <span class="HO" id="plus"><p></p>0.00$</span>
      </td>
     <td class="expense">
         <strong  class="expense-title">Expense  </strong>
-        <span class="LO"><p></p>0.00$</span>
+        <span class="LO" id="minus"><p></p>0.00$</span>
     </td>
 </tr>
 </table>
 
 <h2>History</h2>
+<p id="History"></p>
 <h2>Add new transaction</h2>
 
 <h3>Text</h3>
-<input type="text" placeholder="Enter text">
+<input type="text" placeholder="Enter text" id="text">
 <p>Amount</p>
 <p>(negative - expense, postive-income)</p>
-<input type="text" placeholder="Enter amount">
+<input type="text" placeholder="Enter amount" id="amount" pattern="1">
 <p></p>
-<input type="button" value="Add transaction" >
+<input type="submit" required value="Add transaction"  onclick="add()">
+
 </html>
+<script src="index.js"></script>
