@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(229, 240, 220);
+  }
+  
+h1 {
+    color: navy;
+    margin-left: 5%;
+    text-align: center;
+
+}
+table{
+    border-radius: 1px;
+    width: 100%;
+    padding: 5%;
+
+
+    box-shadow: 3px 3px 17px 6px rgba(110, 52, 52, 0.17);
+    border: black;
+    border-radius: 1px;
+}
+div+
+
+
+
+{
+    border-radius: 1px;
+    width: 100%;
+    padding: 5%;
+
+
+    box-shadow: 3px 3px 17px 6px rgba(110, 52, 52, 0.17);
+    border: black;
+    border-radius: 1px;
+}
+
+td{
+    color: rgb(5, 4, 4);
+    text-align: center;
+    margin: auto;
+    width: 50%;
+
+}
+
+td.income{
+    border-right: 0.1em solid rgba(0, 0, 0, 0.199);
+
+}
+td.HO{
+    border-right: 0.1em solid rgba(0, 0, 0, 0.199);
+
+}
+.HO{
+    color: green;
+    text-align: center;
+}
+
+.LO{
+    color: red;
+    text-align: center;
+
+} 
