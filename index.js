@@ -1,6 +1,6 @@
-var expenses = document.getElementById("minus");
-var income = document.getElementById("plus");
-var balance = document.getElementById("money");
+const expenses = document.getElementById("minus");
+const income = document.getElementById("plus");
+const balance = document.getElementById("money");
 
 var transactionHistory = [];
 var totalExpenses = 00;
