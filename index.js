@@ -1,70 +1,71 @@
 
-var minus = document.getElementById("minus");
-var plus = document.getElementById("plus");
-var money = document.getElementById("money");
+var expenses = document.getElementById("minus");
+var income = document.getElementById("plus");
+var balance = document.getElementById("money");
 
-var array=[]
-var expenses = 100;
-var income = 10;
-var balance = 1;
+var transactionHistory=[]
+var totalExpenses = 00;
+var totalIncome = 10;
 //var x = load();
-minus.innerHTML=expenses+".00$";
-plus.innerHTML=income+".00$";
-money.innerHTML=income-expenses+".00$";
+expenses.innerHTML=totalExpenses+".00$";
+income.innerHTML=totalIncome+".00$";
+balance.innerHTML=totalIncome-totalExpenses+".00$";
 
 function add(){
 
-var s = required()
-if (s){
-    var amount = document.getElementById("amount").value
-    var text = document.getElementById("text").value
-    if(amount>0){
-      income+=amount;
-      load();
+  var transactionBody = document.getElementById("text").value
+
+  var transactionAmount = document.getElementById("amount").value
+    if(! isFormValid (transactionBody,transactionAmount)){
+      return(alert('form is not valid'))
     }
-    else{
-      expenses+=amount;
-      load();
+    transactionAmount=parseInt(transactionAmount);
+   if(transactionAmount>0){
+     totalIncome+=transactionAmount;
+   }
+   else{
+     totalExpenses-=transactionAmount;
     }
-    array.push([text,amount])
-    console.log(array)
+
+    transactionHistory.push([transactionBody,transactionAmount]);
+    updateIncome(totalIncome);
+    updateExpense(totalExpenses);
+    updateBalance(totalIncome-totalExpenses);
     document.getElementById("amount").value=""
     document.getElementById("text").value=""
-    document.getElementById("History").innerHTML=array.map(getFullName)
+    document.getElementById("History").innerHTML=transactionHistory.map(getFullName)
     
 }
 function getFullName(item) {
     var fullname = "Item " +item[0]+" price "+item[1]+";";
     return fullname;
   }
-function load(){
-minus.innerHTML=expenses+".00$";
-plus.innerHTML=income+".00$";
-money.innerHTML=income-expenses+".00$";
+function updateIncome(value){
+  income.innerHTML=value+".00$"
 }
-// function calculate(array){
-// for ( i = 0; i < array.length; i++) {
-    
-// }
-// }
-
+function updateExpense(value){
+  expenses.innerHTML=value+".00$"
 }
-function required()
-{
-var empt =document.getElementById("text").value
-var amount = document.getElementById("amount").value
-if (!empt )
-{
-alert("Please input a text");
-return false;
+function updateBalance(value){
+  balance.innerHTML=value+".00$"
 }
-if ( isNaN(amount) || !amount)
-  {
-  alert("Please input a number");
+function isEmpty(value){
+  return value.trim() == "";
+}
+function isNotNumber(number){
+  return  isNaN(number);
+}
+function isFormValid(transactionBody,transactionAmount){
+if(isEmpty(transactionBody) || isEmpty(transactionAmount)){
+  alert("please input a text")
   return false;
 }
-else{
-alert('Item has accepted : you can add another one');
-return true; 
+if(isNotNumber(transactionAmount)){
+  alert("Please input a number")
+  return false;
 }
+return true;
 }
+
+
+
